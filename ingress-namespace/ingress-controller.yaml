@@ -440,7 +440,6 @@ spec:
         effect: "NoSchedule"
       hostNetwork: true
       nodeSelector:
-        kubernetes.io/os: linux
         ingress: present
       serviceAccountName: ingress-nginx
       terminationGracePeriodSeconds: 300
@@ -679,7 +678,6 @@ spec:
       restartPolicy: OnFailure
       serviceAccountName: ingress-nginx-admission
       nodeSelector:
-        kubernetes.io/os: linux
         ingress: present
       securityContext:
         fsGroup: 2000
@@ -742,7 +740,6 @@ spec:
       restartPolicy: OnFailure
       serviceAccountName: ingress-nginx-admission
       nodeSelector:
-        kubernetes.io/os: linux
         ingress: present
       securityContext:
         fsGroup: 2000
