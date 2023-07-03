@@ -17072,6 +17072,8 @@ spec:
           name: gpg-keyring
         - mountPath: /tmp
           name: tmp
+      nodeSelector:
+        mgt: present
       tolerations:
       - key: "mgt"
         operator: "Equal"
@@ -17153,6 +17155,8 @@ spec:
           name: dexconfig
         - mountPath: /tls
           name: argocd-dex-server-tls
+      nodeSelector:
+        mgt: present
       tolerations:
       - key: "mgt"
         operator: "Equal"
@@ -17181,6 +17185,8 @@ spec:
           name: static-files
         - mountPath: /tmp
           name: dexconfig
+      nodeSelector:
+        mgt: present
       tolerations:
       - key: "mgt"
         operator: "Equal"
@@ -17244,6 +17250,8 @@ spec:
         - mountPath: /app/config/reposerver/tls
           name: argocd-repo-server-tls
         workingDir: /app
+      nodeSelector:
+        mgt: present
       tolerations:
       - key: "mgt"
         operator: "Equal"
@@ -17318,6 +17326,8 @@ spec:
           capabilities:
             drop:
             - ALL
+      nodeSelector:
+        mgt: present
       tolerations:
       - key: "mgt"
         operator: "Equal"
@@ -17539,6 +17549,8 @@ spec:
           name: helm-working-dir
         - mountPath: /home/argocd/cmp-server/plugins
           name: plugins
+      nodeSelector:
+        mgt: present
       tolerations:
       - key: "mgt"
         operator: "Equal"
@@ -17564,6 +17576,8 @@ spec:
         volumeMounts:
         - mountPath: /var/run/argocd
           name: var-files
+      nodeSelector:
+        mgt: present
       tolerations:
       - key: "mgt"
         operator: "Equal"
@@ -17872,6 +17886,8 @@ spec:
           name: plugins-home
         - mountPath: /tmp
           name: tmp
+      nodeSelector:
+        mgt: present
       tolerations:
       - key: "mgt"
         operator: "Equal"
@@ -18102,6 +18118,8 @@ spec:
         - mountPath: /home/argocd
           name: argocd-home
         workingDir: /home/argocd
+      nodeSelector:
+        mgt: present
       tolerations:
       - key: "mgt"
         operator: "Equal"
