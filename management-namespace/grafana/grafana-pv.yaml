@@ -7,12 +7,12 @@ spec:
   accessModes:
     - ReadWriteOnce
   capacity:
-    storage: 1Gi
+    storage: 10Gi
   volumeMode: Filesystem
   storageClassName: "grafana"
   claimRef:
     name: grafana-pvc
     namespace: mgt
   nfs:
-    server: 172.30.16.205
+    server: 10.240.0.54
     path: /smtbrc
