@@ -8,8 +8,8 @@ image:
 imagePullSecrets: []
 
 nfs:
-  server: 172.30.18.162
-  path: /data
+  server: 10.240.0.54
+  path: /smtbrc
   mountOptions:
   volumeName: nfs-subdir-external-provisioner-root
   # Reclaim policy for the main nfs volume
@@ -28,7 +28,7 @@ storageClass:
 
   # Set a StorageClass name
   # Ignored if storageClass.create is false
-  name: nfs-client
+  name: smtbrc-prod-nfs-01
 
   # Allow volume to be expanded dynamically
   allowVolumeExpansion: true
@@ -100,10 +100,15 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
-nodeSelector: {}
+nodeSelector:
+  mgt: present 
 
-tolerations: []
-
+tolerations:
+- key: "mgt"
+  operator: "Equal"
+  value: "present"
+  effect: "NoSchedule"
+ 
 affinity: {}
 
 # Additional labels for any resource created
