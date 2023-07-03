@@ -34,7 +34,9 @@ spec:
       - key: "mgt"
         operator: "Equal"
         value: "present"
-        effect: "NoSchedule"         
+        effect: "NoSchedule"
+      nodeSelector:
+        mgt: present         
       volumes:
       - name: config-volume
         configMap:
