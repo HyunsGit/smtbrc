@@ -441,6 +441,7 @@ spec:
       hostNetwork: true
       nodeSelector:
         kubernetes.io/os: linux
+        ingress: present
       serviceAccountName: ingress-nginx
       terminationGracePeriodSeconds: 300
       volumes:
@@ -679,6 +680,7 @@ spec:
       serviceAccountName: ingress-nginx-admission
       nodeSelector:
         kubernetes.io/os: linux
+        ingress: present
       securityContext:
         fsGroup: 2000
         runAsNonRoot: true
@@ -741,6 +743,7 @@ spec:
       serviceAccountName: ingress-nginx-admission
       nodeSelector:
         kubernetes.io/os: linux
+        ingress: present
       securityContext:
         fsGroup: 2000
         runAsNonRoot: true
