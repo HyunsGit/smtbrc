@@ -179,7 +179,7 @@ spec:
         value: "present"
         effect: "NoSchedule"    
       nodeSelector:
-        kubernetes.io/os: linux
+        mgt: present
       priorityClassName: system-cluster-critical
       serviceAccountName: metrics-server
       volumes:

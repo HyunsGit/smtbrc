@@ -56,5 +56,5 @@ spec:
         value: "present"
         effect: "NoSchedule"    
       nodeSelector:
-        kubernetes.io/os: linux
+        mgt: present
       serviceAccountName: kube-state-metrics

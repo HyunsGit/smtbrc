@@ -385,7 +385,6 @@ metadata:
     chart: openstack-cinder-csi-2.3.0
     heritage: Helm
 spec:
-  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
