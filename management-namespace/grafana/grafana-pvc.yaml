@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: grafana-pvc
+  namespace: mgt
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: "grafana"
+  resources:
+    requests:
+      storage: 1Gi

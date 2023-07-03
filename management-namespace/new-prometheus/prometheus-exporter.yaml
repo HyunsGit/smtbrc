@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-exporter-ds
+  namespace: mgt
+  labels:
+    k8s-app: node-exporter
+spec:
+  selector:
+    matchLabels:
+      k8s-app: node-exporter
+  template:
+    metadata:
+      labels:
+        k8s-app: node-exporter
+    spec:
+      containers:
+      - image: prom/node-exporter
+        name: node-exporter
+        ports:
+        - containerPort: 9100
+          protocol: TCP
+          name: http
+      tolerations:
+      - key: "mgt"
+        operator: "Equal"
+        value: "present"
+        effect: "NoSchedule"      
+      - key: "dev"
+        operator: "Equal"
+        value: "present"
+        effect: "NoSchedule"    
+      - key: "cbt"
+        operator: "Equal"
+        value: "present"
+        effect: "NoSchedule"
+      - key: "prod"
+        operator: "Equal"
+        value: "present"
+        effect: "NoSchedule"
+     - key: "ingress"
+        operator: "Equal"
+        value: "present"
+       effect: "NoSchedule"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    k8s-app: node-exporter
+  name: node-exporter
+  namespace: mgt
+spec:
+  ports:
+  - name: http
+    port: 9100
+    nodePort: 31672
+    protocol: TCP
+  type: NodePort
+  selector:
+    k8s-app: node-exporter
