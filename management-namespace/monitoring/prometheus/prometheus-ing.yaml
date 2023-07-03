@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: alert-mngr-ing
+  name: prometheus-ing
   namespace: mgt
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -9,13 +9,13 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false" # HTTPS로의 강제 리다이렉션 방지
 spec:
   rules:
-  - host: alertmngr.hyuns.link
+  - host: smtbrcprometheus.hyuns.link
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: alertmanager-svc
+            name: prometheus-svc
             port:
-              number: 9093
+              number: 8080

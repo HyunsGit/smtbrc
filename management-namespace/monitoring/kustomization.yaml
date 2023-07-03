@@ -1,0 +1,13 @@
+namespace: mgt 
+resources:
+- alertmanager/alert-manager-config-map.yaml
+- alertmanager/alert-manager-deployment.yaml
+- alert-manager-ingress.yaml
+- alert-manager-service.yaml
+- alert-template-config-map.yaml
+- prometheus/prometheus-cm.yaml
+- prometheus/prometheus-cr+crb.yaml
+- prometheus/prometheus-deploy.yaml
+- prometheus/prometheus-exporter.yaml
+- prometheus/prometheus-ing.yaml
+- prometheus/prometheus-svc.yaml
