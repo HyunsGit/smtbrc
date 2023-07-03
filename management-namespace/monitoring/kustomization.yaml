@@ -2,7 +2,7 @@ namespace: mgt
 resources:
 - alertmanager/alert-manager-config-map.yaml
 - alertmanager/alert-manager-deployment.yaml
-- alertmanager/lert-manager-ingress.yaml
+- alertmanager/alert-manager-ingress.yaml
 - alertmanager/alert-manager-service.yaml
 - alertmanager/alert-template-config-map.yaml
 - prometheus/prometheus-cm.yaml
