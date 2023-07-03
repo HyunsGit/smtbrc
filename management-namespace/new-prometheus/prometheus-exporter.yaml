@@ -22,26 +22,7 @@ spec:
           protocol: TCP
           name: http
       tolerations:
-      - key: "mgt"
-        operator: "Equal"
-        value: "present"
-        effect: "NoSchedule"      
-      - key: "dev"
-        operator: "Equal"
-        value: "present"
-        effect: "NoSchedule"    
-      - key: "cbt"
-        operator: "Equal"
-        value: "present"
-        effect: "NoSchedule"
-      - key: "prod"
-        operator: "Equal"
-        value: "present"
-        effect: "NoSchedule"
-     - key: "ingress"
-        operator: "Equal"
-        value: "present"
-       effect: "NoSchedule"
+      - operator: "Exists"
 ---
 apiVersion: v1
 kind: Service
