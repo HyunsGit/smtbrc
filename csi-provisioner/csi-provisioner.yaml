@@ -543,16 +543,11 @@ spec:
       affinity:
         {}
       nodeSelector:
-        {}
+        mgt: present
       tolerations:
       - key: "mgt"
         operator: "Equal"
         value: "present"
-        effect: "NoSchedule"   
-      - key: "ingress"
-        operator: "Equal"
-        value: "present"
-        effect: "NoSchedule" 
 ---
 # Source: openstack-cinder-csi/templates/cinder-csi-driver.yaml
 apiVersion: storage.k8s.io/v1
