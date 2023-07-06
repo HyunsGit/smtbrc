@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false" # HTTPS로의 강제 리다이렉션 방지
 spec:
   rules:
-  - host: smtbrc-web-alertmngr.hyuns.link
+  - host: smtbrc-monitor-alertmngr.hyuns.link
     http:
       paths:
       - path: /
